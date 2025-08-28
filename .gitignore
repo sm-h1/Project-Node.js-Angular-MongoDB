@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# dotenv environment variables
+.env
+
+# Build output directories
+dist/
+build/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Package manager files
+package-lock.json
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# Backend upload folder
+backend/uploads/
+
+# Ignore the Gitignore files themselves
+backend/.gitignore
