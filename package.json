@@ -1,0 +1,19 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sm-h1/Project-Node.js-Angular-MongoDB.git"
+  },
+  "author": "Sara & Chava",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sm-h1/Project-Node.js-Angular-MongoDB/issues"
+  },
+  "homepage": "https://github.com/sm-h1/Project-Node.js-Angular-MongoDB#readme"
+}
