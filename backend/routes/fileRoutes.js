@@ -16,17 +16,15 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post('/upload', upload.single('file'), async (req, res) => {
-  const file = req.file;
-  if (!file) return res.status(400).json({ message: 'No file uploaded' });
+  if (!req.file) return res.status(400).json({ message: 'No file uploaded' });
 
   try {
-    const exists = await fileExists(file.originalname);
+    const exists = await fileExists(req.file.originalname);
     if (exists) return res.status(409).json({ message: 'File already exists' });
 
-    await saveFile(file);
+    await saveFile(req.file);
     res.status(201).json({ message: 'File uploaded successfully' });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ message: 'Error uploading file' });
   }
 });
@@ -36,7 +34,6 @@ router.get('/', async (req, res) => {
     const files = await File.find({}, { filename: 1, _id: 0 }); 
     res.json(files);
   } catch (error) {
-    console.error(error);
     res.status(500).json({ message: 'Error fetching files' });
   }
 });
