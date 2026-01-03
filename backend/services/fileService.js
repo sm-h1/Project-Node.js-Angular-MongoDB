@@ -5,7 +5,6 @@ async function fileExists(filename) {
     const existingFile = await File.findOne({ filename });
     return existingFile !== null;
   } catch (error) {
-    console.error(error);
     throw new Error('Error checking if file exists');
   }
 }
@@ -16,10 +15,9 @@ async function saveFile(file) {
       filename: file.originalname,
       path: file.path
     });
-    await newFile.save();
+    return await newFile.save();
   } catch (error) {
-    console.error(error);
-    throw new Error('Error saving file');
+    throw error;
   }
 }
 
