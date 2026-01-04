@@ -1,24 +1,16 @@
 const File = require('../models/File');
 
-async function fileExists(filename) {
-  try {
-    const existingFile = await File.findOne({ filename });
-    return existingFile !== null;
-  } catch (error) {
-    throw new Error('Error checking if file exists');
-  }
-}
+const saveFile = async (fileData) => {
+  const newFile = new File({
+    filename: fileData.filename,      
+    originalname: fileData.originalname, 
+    path: fileData.path
+  });
+  return await newFile.save();
+};
 
-async function saveFile(file) {
-  try {
-    const newFile = new File({
-      filename: file.originalname,
-      path: file.path
-    });
-    return await newFile.save();
-  } catch (error) {
-    throw error;
-  }
-}
+const fileExists = async (name) => {
+  return await File.findOne({ originalname: name });
+};
 
-module.exports = { fileExists, saveFile };
+module.exports = { saveFile, fileExists };
