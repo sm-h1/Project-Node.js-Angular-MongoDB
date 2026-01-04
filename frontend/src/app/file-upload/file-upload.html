@@ -1,0 +1,37 @@
+<div class="upload-wrapper">
+  <div class="upload-card">
+    <h3>📂 ניהול קבצים בענן</h3>
+    <div class="file-input-wrapper">
+      <input type="file" (change)="onFileSelected($event)" class="file-input">
+    </div>
+    
+    <button (click)="onUpload()" [disabled]="!selectedFile" class="upload-button">
+      {{ message === 'מעלה...' ? 'שולח קובץ...' : 'העלה קובץ עכשיו' }}
+    </button>
+
+    <div *ngIf="message" class="message" [ngClass]="isError ? 'error' : 'success'">
+      {{ message }}
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h3>הקבצים שלך</h3>
+    <span style="color: #a0aec0; font-size: 0.9em;">{{ fileList.length }} קבצים נמצאו</span>
+  </div>
+
+  <div class="files-grid">
+    <div *ngIf="fileList.length === 0" style="grid-column: 1/-1; text-align: center; color: #a0aec0; padding: 40px;">
+      עדיין אין קבצים בשרת...
+    </div>
+
+    <div *ngFor="let file of fileList" class="file-card">
+      <div class="file-icon">📄</div>
+      <div class="file-name">{{ file.originalname }}</div>
+      <a [href]="'http://localhost:3000/uploads/' + file.filename" 
+         target="_blank" 
+         class="view-btn">
+         צפייה בקובץ
+      </a>
+    </div>
+  </div>
+</div>

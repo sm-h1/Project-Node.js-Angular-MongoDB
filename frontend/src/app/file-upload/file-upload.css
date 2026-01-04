@@ -1,0 +1,133 @@
+/* מכולה ראשית */
+.upload-wrapper {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  direction: rtl;
+  background-color: #fcfdfe;
+}
+
+/* כרטיס העלאה */
+.upload-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(189, 206, 233, 0.3);
+  text-align: center;
+  border: 1px solid #e1e8f0;
+  margin-bottom: 40px;
+}
+
+h3 {
+  color: #4a5568;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* עיצוב ה-Input */
+.file-input-wrapper {
+  margin-bottom: 20px;
+}
+
+.file-input {
+  padding: 10px;
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.file-input:hover {
+  border-color: #a3bffa;
+  background: #edf2f7;
+}
+
+/* כפתור העלאה פסטלי */
+.upload-button {
+  background-color: #a3bffa; /* כחול פסטל */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.upload-button:hover:not(:disabled) {
+  background-color: #81a6f7;
+  transform: translateY(-2px);
+}
+
+.upload-button:disabled {
+  background-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+/* רשימת הקבצים */
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.file-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.file-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-color: #cbd5e0;
+}
+
+.file-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #2d3748;
+  font-weight: 500;
+  text-align: center;
+  word-break: break-all;
+  margin-bottom: 15px;
+}
+
+.view-btn {
+  text-decoration: none;
+  background-color: #f0fff4; /* ירוק פסטל עדין */
+  color: #38a169;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #c6f6d5;
+}
+
+.view-btn:hover {
+  background-color: #c6f6d5;
+}
+
+/* הודעות שגיאה והצלחה */
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.success { color: #38a169; background: #f0fff4; }
+.error { color: #e53e3e; background: #fff5f5; }
